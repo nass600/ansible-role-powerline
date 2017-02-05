@@ -11,6 +11,13 @@
     name: "{{ item }}"
   with_items: "{{ powerline_pip_packages }}"
 
+- name: Generate Powerline config
+  template:
+    src: config.json.j2
+    dest: "{{ powerline_config_dir }}/config.json"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: Cloning Powerline fonts
   become_user: "{{ user }}"
   git:
