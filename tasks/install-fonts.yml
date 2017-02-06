@@ -1,0 +1,11 @@
+---
+- name: Cloning Powerline fonts
+  become_user: "{{ user }}"
+  git:
+    repo: "{{ powerline_fonts_repo }}"
+    dest: "{{ powerline_fonts_dir }}"
+    accept_hostkey: yes
+
+- name: Installing Powerline fonts
+  shell: "{{ powerline_fonts_dir }}/install.sh"
+

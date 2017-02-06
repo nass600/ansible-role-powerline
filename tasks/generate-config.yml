@@ -1,0 +1,24 @@
+---
+- name: Generate Powerline config
+  template:
+    src: config.json.j2
+    dest: "{{ powerline_config_dir }}/config.json"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Add daemon to bash_profile
+  blockinfile:
+    path: "{{ home }}/.bash_profile"
+    block: |
+      ############################################################
+      # Powerline configuration
+      ############################################################
+
+      powerline_info=$(pip show powerline-status | grep Location)
+      if [ -n "$powerline_info" ]; then
+          powerline_repo=${powerline_info#Location: }
+          powerline-daemon -q
+          POWERLINE_BASH_CONTINUATION=1
+          POWERLINE_BASH_SELECT=1
+          . ${powerline_repo}/powerline/bindings/bash/powerline.sh
+      fi

@@ -1,29 +1,7 @@
 ---
-- name: Installing Pip
-  become: true
-  apt:
-    pkg: "python-pip"
-    state: latest
 
-- name: Installing Powerline pip packages
-  become: true
-  pip:
-    name: "{{ item }}"
-  with_items: "{{ powerline_pip_packages }}"
+- include: install-powerline.yml
 
-- name: Generate Powerline config
-  template:
-    src: config.json.j2
-    dest: "{{ powerline_config_dir }}/config.json"
-    owner: "{{ user }}"
-    group: "{{ user }}"
+- include: install-fonts.yml
 
-- name: Cloning Powerline fonts
-  become_user: "{{ user }}"
-  git:
-    repo: "{{ powerline_fonts_repo }}"
-    dest: "{{ powerline_config_dir }}/fonts"
-    accept_hostkey: yes
-
-- name: Installing Powerline fonts
-  shell: "{{ powerline_config_dir }}/fonts/install.sh"
+- include: generate-config.yml

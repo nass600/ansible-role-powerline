@@ -1,12 +1,16 @@
 ---
-powerline_fonts_repo: "git://github.com/powerline/fonts.git"
+powerline_package_name: "powerline-status"
+powerline_version: ""
 
 powerline_config_dir: "{{ home }}/.config/powerline"
+
 powerline_config_shell_colorscheme: "default"
 powerline_config_shell_theme: "default"
 powerline_config_vim_colorscheme: "default"
 powerline_config_vim_theme: "default"
 
-powerline_pip_packages:
-  - powerline-status
+powerline_fonts_repo: "git://github.com/powerline/fonts.git"
+powerline_fonts_dir: "{{ powerline_config_dir }}/fonts"
+
+powerline_extra_segments:
   - powerline-gitstatus
