@@ -1,6 +1,6 @@
 # Ansible Role - Powerline
 
-
+[![Ansible Role](https://img.shields.io/ansible/role/15428.svg)](https://galaxy.ansible.com/nass600/powerline/)
 [![Build Status](https://travis-ci.org/nass600/ansible-role-powerline.svg?branch=master)](https://travis-ci.org/nass600/ansible-role-powerline)
 
 Installs and configures [Powerline](http://powerline.readthedocs.io/en/master/index.html) in Linux and macOS systems.

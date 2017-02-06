@@ -3,13 +3,7 @@ sudo: required
 language: python
 
 before_install:
-  # Uninstall existing brew installation.
-  - curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall
-  - chmod +x ./uninstall
-  - ./uninstall --force
-  - rm -rf /usr/local/Homebrew
-  - rm -rf /usr/local/Caskroom
-  - rm -rf /usr/local/bin/brew
+  - pip uninstall powerline-status
 
 install:
   # Install pip.
