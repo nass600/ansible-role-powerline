@@ -13,4 +13,4 @@ powerline_fonts_repo: "git://github.com/powerline/fonts.git"
 powerline_fonts_dir: "{{ powerline_config_dir }}/fonts"
 
 powerline_extra_segments:
-  - powerline-gitstatus
+  - { name: powerline-gitstatus, version: "v1.2.1" }
