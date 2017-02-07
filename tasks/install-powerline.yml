@@ -11,6 +11,14 @@
     name: "{{ powerline_package_name }}"
     version: "{{ powerline_version }}"
     state: present
+  when: powerline_version != ""
+
+- name: Installing Powerline
+  become: true
+  pip:
+    name: "{{ powerline_package_name }}"
+    state: present
+  when: powerline_version == ""
 
 - name: Installing Powerline extra segments
   become: true
