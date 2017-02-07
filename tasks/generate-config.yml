@@ -8,7 +8,7 @@
 
 - name: Add daemon to bash_profile
   blockinfile:
-    path: "{{ home }}/.bash_profile"
+    dest: "{{ home }}/.bash_profile"
     block: |
       ############################################################
       # Powerline configuration
