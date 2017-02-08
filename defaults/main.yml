@@ -2,7 +2,8 @@
 powerline_package_name: "powerline-status"
 powerline_version: ""
 
-powerline_config_dir: "{{ lookup('env','HOME') }}/.config/powerline"
+powerline_config_dir: "~/.config/powerline"
+powerline_daemon_destination: "~/.bashrc"
 
 powerline_config_shell_colorscheme: "default"
 powerline_config_shell_theme: "default"

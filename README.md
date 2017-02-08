@@ -32,10 +32,13 @@ Powerline version to install. Default: empty meaning latest.
 
 Additional powerline [segments](http://powerline.readthedocs.io/en/master/configuration/segments.html) that should be installed.
 
+    powerline_daemon_destination: "~/.bashrc"
+
+File where you want to set the powerline daemon launch
 
 #### powerline config
 
-    powerline_config_dir: "{{ lookup('env','HOME') }}/.config/powerline"
+    powerline_config_dir: "~/.config/powerline"
 
 Location of the powerline config files. This directory is where the main `config.json` is going to be created.
 

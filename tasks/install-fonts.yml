@@ -1,11 +1,18 @@
 ---
+- name: Ensure git is installed
+  become: true
+  apt:
+    pkg: "git"
+    state: present
+
 - name: Cloning Powerline fonts
-  become_user: "{{ lookup('env','USER') }}"
+  become: no
   git:
     repo: "{{ powerline_fonts_repo }}"
     dest: "{{ powerline_fonts_dir }}"
-    accept_hostkey: yes
+    accept_hostkey: no
 
 - name: Installing Powerline fonts
+  become: no
   shell: "{{ powerline_fonts_dir }}/install.sh"
 
