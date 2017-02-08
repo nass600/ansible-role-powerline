@@ -2,7 +2,7 @@
 powerline_package_name: "powerline-status"
 powerline_version: ""
 
-powerline_config_dir: "{{ home }}/.config/powerline"
+powerline_config_dir: "{{ lookup('env','HOME') }}/.config/powerline"
 
 powerline_config_shell_colorscheme: "default"
 powerline_config_shell_theme: "default"

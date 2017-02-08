@@ -1,14 +1,13 @@
 ---
 - name: Generate Powerline config
+  become_user: "{{ lookup('env','USER') }}"
   template:
     src: config.json.j2
     dest: "{{ powerline_config_dir }}/config.json"
-    owner: "{{ user }}"
-    group: "{{ user }}"
 
 - name: Add daemon to bash_profile
   blockinfile:
-    dest: "{{ home }}/.bash_profile"
+    dest: "{{ lookup('env','HOME') }}/.bash_profile"
     block: |
       ############################################################
       # Powerline configuration

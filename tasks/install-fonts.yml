@@ -1,6 +1,6 @@
 ---
 - name: Cloning Powerline fonts
-  become_user: "{{ user }}"
+  become_user: "{{ lookup('env','USER') }}"
   git:
     repo: "{{ powerline_fonts_repo }}"
     dest: "{{ powerline_fonts_dir }}"

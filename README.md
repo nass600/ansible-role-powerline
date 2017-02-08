@@ -35,7 +35,7 @@ Additional powerline [segments](http://powerline.readthedocs.io/en/master/config
 
 #### powerline config
 
-    powerline_config_dir: "{{ home }}/.config/powerline"
+    powerline_config_dir: "{{ lookup('env','HOME') }}/.config/powerline"
 
 Location of the powerline config files. This directory is where the main `config.json` is going to be created.
 
