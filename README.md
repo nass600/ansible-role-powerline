@@ -14,7 +14,7 @@ This role assumes you have the config files already located in your filesystem (
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-#### powerline
+### powerline
 
 
     powerline_package_name: "powerline-status"
@@ -36,7 +36,7 @@ Additional powerline [segments](http://powerline.readthedocs.io/en/master/config
 
 File where you want to set the powerline daemon launch
 
-#### powerline config
+### powerline config
 
     powerline_config_dir: "~/.config/powerline"
 
@@ -51,7 +51,7 @@ Location of the powerline config files. This directory is where the main `config
 Themes used for generating the `config.json`.
 
 
-#### powerline fonts
+### powerline fonts
 
     powerline_fonts_repo: "git://github.com/powerline/fonts.git"
 
@@ -82,4 +82,4 @@ Including an example of how to use your role (for instance, with variables passe
 
 ## Author Information
 
-Ignacio Velazquez Gomez - [http://ignaciovelazquez.es]()
+Ignacio Velazquez - [http://ignaciovelazquez.es]()
