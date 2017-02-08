@@ -2,9 +2,12 @@
 powerline_package_name: "powerline-status"
 powerline_version: ""
 
-powerline_config_dir: "~/.config/powerline"
+powerline_extra_segments:
+  - { name: powerline-gitstatus, version: "1.2.1" }
+
 powerline_daemon_destination: "~/.bashrc"
 
+powerline_config_dir: "~/.config/powerline"
 powerline_config_shell_colorscheme: "default"
 powerline_config_shell_theme: "default"
 powerline_config_vim_colorscheme: "default"
@@ -12,6 +15,3 @@ powerline_config_vim_theme: "default"
 
 powerline_fonts_repo: "git://github.com/powerline/fonts.git"
 powerline_fonts_dir: "{{ powerline_config_dir }}/fonts"
-
-powerline_extra_segments:
-  - { name: powerline-gitstatus, version: "1.2.1" }

@@ -1,9 +1,16 @@
 ---
+- name: Check if fonts already installed
+  become: no
+  stat:
+    path: ~/.local/share/fonts/
+  register: powerline_fonts
+
 - name: Ensure git is installed
   become: true
   apt:
     pkg: "git"
     state: present
+  when: powerline_fonts.stat.exists == False
 
 - name: Cloning Powerline fonts
   become: no
@@ -11,8 +18,10 @@
     repo: "{{ powerline_fonts_repo }}"
     dest: "{{ powerline_fonts_dir }}"
     accept_hostkey: no
+  when: powerline_fonts.stat.exists == False
 
 - name: Installing Powerline fonts
   become: no
   shell: "{{ powerline_fonts_dir }}/install.sh"
+  when: powerline_fonts.stat.exists == False
 
