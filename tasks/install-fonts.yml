@@ -10,7 +10,7 @@
   apt:
     pkg: "git"
     state: present
-  when: powerline_fonts.stat.exists == False
+  when: powerline_fonts.stat.exists == False && ansible_os_family == "Debian"
 
 - name: Cloning Powerline fonts
   become: no
