@@ -17,9 +17,6 @@ install:
   - sudo touch /etc/ansible/hosts
   - "echo -e '[local]\nlocalhost ansible_connection=local' | sudo tee -a /etc/ansible/hosts > /dev/null"
 
-  # Install dependency roles.
-  - ansible-galaxy install -r requirements.yml -p ./roles
-
 script:
   # Check the role/playbook's syntax.
   - "ansible-playbook tests/test.yml --syntax-check"
