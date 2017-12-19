@@ -1,7 +1,9 @@
 # Ansible Role - Powerline
 
 [![Ansible Role](https://img.shields.io/ansible/role/15428.svg)](https://galaxy.ansible.com/nass600/powerline/)
+[![GitHub tag](https://img.shields.io/github/tag/nass600/ansible-role-powerline.svg)]()
 [![Build Status](https://travis-ci.org/nass600/ansible-role-powerline.svg?branch=master)](https://travis-ci.org/nass600/ansible-role-powerline)
+[![Ansible Role](https://img.shields.io/ansible/role/d/15428.svg)](https://galaxy.ansible.com/nass600/powerline/)
 
 Installs and configures [Powerline](http://powerline.readthedocs.io/en/master/index.html) in Linux and macOS systems.
 
@@ -28,7 +30,7 @@ Powerline version to install. Default: empty meaning latest.
 
 
     powerline_extra_segments:
-      - { name: powerline-gitstatus, version: "v1.2.1"}
+      - {name: powerline-gitstatus, version: "v1.2.1"}
 
 Additional powerline [segments](http://powerline.readthedocs.io/en/master/configuration/segments.html) that should be installed.
 
@@ -82,4 +84,4 @@ Including an example of how to use your role (for instance, with variables passe
 
 ## Author Information
 
-Ignacio Velazquez - [http://ignaciovelazquez.es]()
+[Ignacio Velazquez](http://ignaciovelazquez.es)
