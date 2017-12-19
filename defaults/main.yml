@@ -3,7 +3,7 @@ powerline_package_name: "powerline-status"
 powerline_version: ""
 
 powerline_extra_segments:
-  - { name: powerline-gitstatus, version: "1.2.1" }
+  - {name: powerline-gitstatus, version: "1.2.1"}
 
 powerline_daemon_destination: "~/.bashrc"
 

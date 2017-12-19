@@ -1,12 +1,12 @@
 ---
 - name: Generate Powerline config
-  become: no
+  become: "no"
   template:
     src: config.json.j2
     dest: "{{ powerline_config_dir }}/config.json"
 
-- name: Add daemon to bash_profile
-  become: no
+- name: Add daemon to bash_profile (Debian)
+  become: "no"
   blockinfile:
     dest: "{{ powerline_daemon_destination }}"
     block: |
@@ -22,3 +22,23 @@
           POWERLINE_BASH_SELECT=1
           . ${powerline_repo}/powerline/bindings/bash/powerline.sh
       fi
+  when: ansible_os_family == "Debian"
+
+- name: Add daemon to bash_profile (Darwin)
+  become: "no"
+  blockinfile:
+    dest: "{{ powerline_daemon_destination }}"
+    block: |
+      ############################################################
+      # Powerline configuration
+      ############################################################
+
+      powerline_info=$(pip2 show powerline-status | grep Location)
+      if [ -n "$powerline_info" ]; then
+          powerline_repo=${powerline_info#Location: }
+          powerline-daemon -q
+          POWERLINE_BASH_CONTINUATION=1
+          POWERLINE_BASH_SELECT=1
+          . ${powerline_repo}/powerline/bindings/bash/powerline.sh
+      fi
+  when: ansible_os_family == "Darwin"
