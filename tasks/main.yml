@@ -1,7 +1,4 @@
 ---
-
-- include: install-powerline.yml
-
-- include: install-fonts.yml
-
-- include: generate-config.yml
+- include_tasks: install-powerline.yml
+- include_tasks: install-fonts.yml
+- include_tasks: generate-config.yml
